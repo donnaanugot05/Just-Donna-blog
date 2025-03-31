@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popcorn & Perspective</title>
+    <link rel="stylesheet" href="popcornstyle.css" />
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        nav.sidebar {
+            margin-right: 20px;
+        }
+
+        nav.sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav.sidebar ul li {
+            margin: 10px 0;
+        }
+
+        nav.sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav.sidebar ul li a.active {
+            font-weight: bold;
+        }
+
+        main.main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .movie-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px; /* Space between cards */
+            width: 100%;
+            max-width: 1200px; /* Limit the width of the grid */
+        }
+
+        .movie-card {
+            perspective: 1000px; /* Adds depth to the flip effect */
+        }
+
+        .flip-box {
+            width: 100%;
+            height: 300px; /* Adjust height as needed */
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ccc; /* Optional border */
+            border-radius: 8px; /* Optional rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        }
+
+        .flip-box-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-box-front, .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .flip-box-front {
+            z-index: 2; /* Show front side */
+        }
+
+        .flip-box-back {
+            transform: rotateY(180deg); /* Hide back side initially */
+            padding: 10px; /* Padding for text */
+        }
+
+        .movie-card:hover .flip-box-inner {
+            transform: rotateY(180deg); /* Flip effect on hover */
+        }
+
+        .flip-box-back h2 {
+            font-size: 16px; /* Adjust as needed */
+            line-height: 1.2; /* Ensure text is not too cramped */
+        }
+
+        .flip-box-back p {
+            font-size: 14px; /* Smaller size for description */
+            line-height: 1.4; /* Adequate spacing for readability */
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Popcorn & Perspective</h1>
+        </header>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="main.html" class="active">Homepage</a></li>
+                <li><a href="corner.html">My Little Corner</a></li>
+                <li><a href="bites.html">Bites of Bliss</a></li>
+                <li><a href="album.html">My Adventure Album</a></li>
+                <li><a href="boudoir.html">My Bookish Boudoir</a></li>
+                <li><a href="popcorn.html">Popcorn & Perspective</a></li>
+                <li><a href="business.html">I Mean Business</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <section class="movie-cards">
+                <!-- Movie Card Section -->
+                <article class="movie-card"> 
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/1.jpg" alt="Legally Blonde movie poster">
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Legally Blonde (2001)</h2>
+                                <p>Fun, empowering, and packed with pink! 💖📚⚖️</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card"> 
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/2.jpg" alt="The Pianist movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>The Pianist (2002)</h2>
+                                <p>Haunting, powerful, and deeply moving. A true story of survival during WWII. 🎹💔</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/3.jpg" alt="Miss Peregrine’s Home for Peculiar Children movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Miss Peregrine’s Home for Peculiar Children (2016)</h2>
+                                <p>Visually stunning but missing the magic of the book. A decent watch for fantasy lovers. 🎭🔮📖</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/4.jpg" alt="Barbie and the Three Musketeers movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Barbie and the Three Musketeers (2009)</h2>
+                                <p>A fun, action-packed twist on a classic tale! Empowering and enjoyable for Barbie fans! 🏰⚔️👑</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/5.jpg" alt="Valerie and Her Week of Wonders movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Valerie and Her Week of Wonders (1970)</h2>
+                                <p>A surreal, dreamlike fairy tale blending horror and fantasy. A must-watch for arthouse cinema lovers. 🦢🔮</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/6.jpg" alt="Gentlemen Prefer Blondes movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Gentlemen Prefer Blondes (1953)</h2>
+                                <p>Glitzy, charming, and irresistibly fun. A classic Hollywood musical filled with comedy and romance!</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/7.jpg" alt="Uptown Girls movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Uptown Girls (2003)</h2>
+                                <p>Sweet, funny, and unexpectedly touching. A heartwarming story about growing up and friendship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/8.jpg" alt="The Sound of Music movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>The Sound of Music (1965)</h2>
+                                <p>A timeless classic with unforgettable music and a heartwarming story. A must-watch for all! 🎶</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/9.jpg" alt="Carol movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Carol (2015)</h2>
+                                <p>Elegant and beautifully shot, a slow-burn romance filled with longing and unspoken emotions. ❤️</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/10.jpg" alt="Pride & Prejudice movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Pride & Prejudice (2005)</h2>
+                                <p>Breathtaking adaptation with stunning visuals and powerful emotions. A timeless comfort movie.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="movies/11.jpg" alt="Mona Lisa Smile movie poster"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Mona Lisa Smile (2003)</h2>
+                                <p>Inspiring and thought-provoking, a feminist film with a powerful message about choice and independence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Just, Donna. All rights reserved.</p>
+        </footer>
+    </div>
+    <div class="music-container">
+        <audio id="myAudio" controls style="display: none;">
+            <source src="audio/movie.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <button id="playButton">Play</button>
+          <button id="pauseButton" disabled>Pause</button>
+          <script>
+            const audio = document.getElementById("myAudio");
+            const playButton = document.getElementById("playButton");
+            const pauseButton = document.getElementById("pauseButton");
+            playButton.addEventListener("click", () => { audio.play(); playButton.disabled = true; pauseButton.disabled = false; });
+            pauseButton.addEventListener("click", () => { audio.pause(); playButton.disabled = false; pauseButton.disabled = true; });
+            audio.addEventListener('ended', () => {playButton.disabled = false; pauseButton.disabled = true;});
+          </script>
+
+    </div>
+    <script>
+        // Optional: Add any additional JavaScript functionality here
+    </script>
+</body>
+</html>

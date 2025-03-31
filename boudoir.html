@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bookish Boudoir</title>
+    <link rel="stylesheet" href="boudoirstyle.css" />
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh; /* Full height of the viewport */
+            flex-direction: column; /* Allow footer to stay at the bottom */
+        }
+
+        nav.sidebar {
+            width: 200px; /* Fixed width for the sidebar */
+            background-color: #f4f4f4; /* Light background for the sidebar */
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+            position: fixed; /* Fix the sidebar to the left */
+            height: 100%; /* Full height */
+            overflow-y: auto; /* Allow scrolling if content overflows */
+        }
+
+        nav.sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav.sidebar ul li {
+            margin: 10px 0;
+        }
+
+        nav.sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav.sidebar ul li a.active {
+            font-weight: bold;
+        }
+
+        main.main-content {
+            margin-left: 220px; /* Space for the sidebar */
+            flex: 1; /* Take the remaining space */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto; /* Allow scrolling if content overflows */
+        }
+
+        h1 {
+            font-size: 36px; /* Adjust the font size as needed */
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        .book-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px; /* Space between cards */
+            width: 100%;
+            max-width: 1200px; /* Limit the width of the grid */
+        }
+
+        .book-card {
+            perspective: 1000px; /* Adds depth to the flip effect */
+        }
+
+        .flip-box {
+            width: 100%;
+            height: 350px; /* Adjust height as needed */
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ccc; /* Optional border */
+            border-radius: 8px; /* Optional rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        }
+
+        .flip-box-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-box-front, .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .flip-box-front {
+            z-index: 2; /* Show front side */
+        }
+
+        .flip-box-back {
+            transform: rotateY(180deg); /* Hide back side initially */
+            padding: 10px; /* Padding for text */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .flip-box-front img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Ensures the image covers the area */
+            max-width: 300px; /* Increased maximum width for larger images */
+            border-radius: 8px; /* Optional rounded corners for images */
+        }
+
+        .book-card:hover .flip-box-inner {
+            transform: rotateY(180deg); /* Flip effect on hover */
+        }
+
+        .flip-box-back h2 {
+            font-size: 16px; /* Adjust as needed */
+            line-height: 1.2; /* Ensure text is not too cramped */
+            margin-bottom: 5px; /* Space between title and description */
+        }
+
+        .flip-box-back p {
+            font-size: 14px; /* Smaller size for description */
+            line-height: 1.4; /* Adequate spacing for readability */
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px; /* Padding for footer */
+            background-color: #f4f4f4; /* Optional background color for footer */
+            position: relative; /* Ensure footer stays at the bottom */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="main.html">Homepage</a></li>
+                <li><a href="corner.html">My Little Corner</a></li>
+                <li><a href="bites.html">Bites of Bliss</a></li>
+                <li><a href="album.html">My Adventure Album</a></li>
+                <li><a href="boudoir.html" class="active">My Bookish Boudoir</a></li>
+                <li><a href="popcorn.html">Popcorn & Perspective</a></li>
+                <li><a href="business.html">I Mean Business</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <h1>My Bookish Boudoir</h1>
+            </header>
+            <section class="book-cards">
+                <!-- Book Card Section -->
+                <article class="book-card"> 
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/1.jpg" alt="Thea Stilton and the Star Castaway book cover">
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Thea Stilton and the Star Castaway 🌟🌟🌟🌟</h2>
+                                <p>This book takes the Thea Sisters on an exciting space adventure filled with mystery, teamwork, and science! The vivid descriptions and fast-paced plot made it a fun and engaging read. While some parts were a bit predictable, the strong friendship and thrilling twists kept me hooked. A must-read for fans of adventure and girl power! 🚀💫</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card"> 
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/2.jpg" alt="Cherry Cheesecake Murder book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Cherry Cheesecake Murder by Joanne Fluke 🌟🌟🌟🌟🌟</h2>
+                                <p>When a Hollywood director drops dead after eating Hannah’s cherry cheesecake, she’s back on the case, juggling clues, cookies, and her never-ending love triangle. The mystery kept me guessing, and the small-town drama was as fun as ever. A cozy, delicious read—just don’t read it on an empty stomach! 🍒🍰</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/3.jpg" alt="Black Beauty book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Black Beauty by Anna Sewell 🌟🌟🌟🌟🌟</h2>
+                                <p>A timeless classic told from the perspective of a horse, Black Beauty is both heartwarming and heartbreaking. It takes you through the highs and lows of Beauty’s life, showing the importance of kindness and compassion toward animals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/4.jpg" alt="The Virgin Suicides book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>The Virgin Suicides by Jeffrey Eugenides 🌟🌟🌟🌟</h2>
+                                <p>Haunting, poetic, and deeply melancholic, this mesmerizing look at obsession and memory unravels the tragic story of the five Lisbon sisters. A beautifully written but deeply haunting read. 💔</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/5.jpg" alt="A Good Girl's Guide to Murder book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>A Good Girl’s Guide to Murder by Holly Jackson 🌟🌟🌟🌟✨ (4.5/5)</h2>
+                                <p>Fast-paced and full of twists, this book follows Pippa, a smart teen who reopens a closed murder case for her school project. A must-read for thriller fans! 🔍📖💀</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/6.jpg" alt="The Midnight Library book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>The Midnight Library by Matt Haig 🌟🌟🌟🌟🌟</h2>
+                                <p>A thought-provoking read exploring the "what ifs" of life through Nora, who experiences alternate versions of her existence. A comforting, heartfelt read! 📚✨💭</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/7.jpg" alt="The Metamorphosis book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>The Metamorphosis by Franz Kafka 🌟🌟🌟🌟🌟</h2>
+                                <p>Weird and unsettling, this powerful story about Gregor Samsa explores isolation and alienation. A haunting classic that lingers long after you finish. 🪳💭</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/8.jpg" alt="The Silent Patient book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>The Silent Patient by Alex Michaelides 🌟🌟🌟🌟✨ (4.5/5)</h2>
+                                <p>A gripping psychological thriller with a mind-blowing twist! A must-read for thriller lovers who enjoy a good jaw-drop moment! 🔪</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/9.jpg" alt="Miss Peregrine's Home for Peculiar Children book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Miss Peregrine’s Home for Peculiar Children Series by Ransom Riggs 🌟🌟🌟🌟🌟</h2>
+                                <p>This series had me hooked till dawn! The mix of eerie vintage photos and supernatural adventure made it impossible to put down. 100% worth the sleepless night! ⏳📖✨</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="book-card">
+                    <div class="flip-box">
+                        <div class="flip-box-inner">
+                            <div class="flip-box-front">
+                                <img src="books/10.jpg" alt="Murder on St. Mark's Place book cover"> 
+                            </div>
+                            <div class="flip-box-back">
+                                <h2>Murder on St. Mark’s Place by Victoria Thompson 🌟🌟🌟🌟</h2>
+                                <p>A gripping Gilded Age mystery with rich historical details and a clever heroine! A must-read for fans of historical whodunits! 🕵️‍♀️🗽</p>
+                            </div>
+                            
+                
+                            </div>
+                            
+                        </div>
+                        <div class="music-container">
+                            <audio id="myAudio" controls style="display: none;">
+                                <source src="audio/books.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                              </audio>
+                              <button id="playButton">Play</button>
+                              <button id="pauseButton" disabled>Pause</button>
+                              <script>
+                                const audio = document.getElementById("myAudio");
+                                const playButton = document.getElementById("playButton");
+                                const pauseButton = document.getElementById("pauseButton");
+                                playButton.addEventListener("click", () => { audio.play(); playButton.disabled = true; pauseButton.disabled = false; });
+                                pauseButton.addEventListener("click", () => { audio.pause(); playButton.disabled = false; pauseButton.disabled = true; });
+                                audio.addEventListener('ended', () => {playButton.disabled = false; pauseButton.disabled = true;});
+                              </script>
+                    </div>
+                    
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Just, Donna. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Optional: Add any additional JavaScript functionality here
+    </script>
+</body>
+</html>

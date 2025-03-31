@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #fae1dd;
+    --secondary-color: #dd1cadcc;
+    --sidebar-bg: #ffc0cb;
+    --link-bg: #f48fb1;
+    --link-hover-bg: #e57373;
+    --footer-bg: #f48fb1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "sidebar main-content"
+        "footer footer";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr auto; /* Adjust the last row to auto instead of a fixed height */
+    min-height: 100vh; /* Ensure it fills the viewport */
+}
+
+/* Sidebar Styles */
+
+nav.sidebar {
+    grid-area: sidebar;
+    background-color: var(--sidebar-bg);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    background-color: var(--link-bg);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-size: 1.5em;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--link-hover-bg);
+}
+
+	
+/* Footer Styles */
+
+footer {
+    grid-area: footer;
+    background-color: var(--footer-bg);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "sidebar"
+            "main-content"
+            "footer";
+    }
+
+    nav.sidebar {
+        padding: 10px;
+    }
+}
+

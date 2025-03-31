@@ -1,0 +1,189 @@
+/* Global Styles */
+:root {
+    --primary-color: #fae1dd;
+    --secondary-color: #dd1cadcc;
+    --sidebar-bg: #ffc0cb;
+    --link-bg: #f48fb1;
+    --link-hover-bg: #e57373;
+    --footer-bg: #f48fb1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url("Images/1.jpg") center/cover no-repeat;
+    color: var(--secondary-color);
+    line-height: 1.6;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container Styles */
+.container {
+    display: grid;
+    grid-template-areas:
+        "sidebar main-content"
+        "footer footer";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 60px; /* Footer is visible */
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+nav.sidebar {
+    grid-area: sidebar;
+    background-color: var(--sidebar-bg);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    background-color: var(--link-bg);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-size: 1.5em;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--link-hover-bg);
+}
+
+/* Main Content */
+main.main-content {
+    grid-area: main-content;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* "Just, Donna" Positioning */
+.donna-message {
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 5em;
+    font-weight: bold;
+    color: cream;
+    text-align: center;
+    margin-bottom: 10px; /* Reduced gap */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Slideshow - Adjusted to Stay Below Title */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Limits width */
+    height: auto; /* Makes it responsive */
+    margin: 0 auto 20px auto; /* Positions it below the title */
+    overflow: hidden;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 500px;
+    height: 800px; /* Taller for full image display */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    position: absolute; /* Positioning for overlapping slides */
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+}
+.slide img {
+    width: 600px;
+    height: 800px;
+    object-fit: contain; /* Prevents image cropping */
+    border-radius: 10px;
+}
+
+/* Footer - Visible */
+footer {
+    grid-area: footer;
+    background-color: var(--footer-bg);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .donna-message {
+        font-size: 4em;
+    }
+    .slideshow {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main-content"
+            "footer";
+    }
+    nav.sidebar {
+        padding: 10px;
+    }
+    .donna-message {
+        font-size: 3.5em;
+    }
+    .slideshow {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .donna-message {
+        font-size: 3em;
+    }
+    .slideshow {
+        max-width: 90%;
+    }
+}
+.music-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#music-toggle {
+    background-color: #dd1cadcc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#music-toggle:hover {
+    background-color: #b11299;
+}

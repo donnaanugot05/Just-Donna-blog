@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just, Donna</title>
+    <link rel="stylesheet" href="businesstyle.css" />
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+               <li><a href="main.html" class="active">Homepage</a></li>
+                <li><a href="corner.html" class="active">My Little Corner</a></li>
+                <li><a href="bites.html">Bites of Bliss</a></li>
+                <li><a href="album.html">My Adventure Album</a></li>
+                <li><a href="boudoir.html">My Bookish Boudoir</a></li>
+                <li><a href="popcorn.html">Popcorn & Perspective</a></li>
+                <li><a href="business.html">I mean business</a></li>
+            </ul>
+        </nav>
+        <div class="background"></div>
+    
+        <div class="main-content">
+            <h1>I Mean Business</h1>
+            <p>Welcome to my girly keychain collection! Find the perfect accessory to add charm to your everyday essentials. 💖✨</p>
+            
+            <div class="keychain-gallery">
+                <div class="keychain-item">
+                    <img src="business/1.jpg" alt="Pink Heart Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/2.jpg" alt="Fluffy Pom-Pom Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/3.jpg" alt="Butterfly Charm Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/4.jpg" alt="Glitter Star Keychain">
+                   
+                </div>
+                <div class="keychain-item">
+                    <img src="business/5.jpg" alt="Glitter Star Keychain">
+                   
+                </div>
+                <div class="keychain-item">
+                    <img src="business/6.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/7.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/8.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/9.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/10.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/11.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/12.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/13.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/14.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/15.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/16.jpg" alt="Glitter Star Keychain">
+                   
+                </div>
+                <div class="keychain-item">
+                    <img src="business/17.jpg" alt="Glitter Star Keychain">
+                    
+                </div>
+                <div class="keychain-item">
+                    <img src="business/18.jpg" alt="Glitter Star Keychain">
+                   
+                </div> <!-- This correctly closes .main-content -->
+                <div class="music-container">
+                    <audio id="myAudio" controls style="display: none;">
+                        <source src="audio/business.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                      </audio>
+                      <button id="playButton">Play</button>
+                      <button id="pauseButton" disabled>Pause</button>
+                      <script>
+                        const audio = document.getElementById("myAudio");
+                        const playButton = document.getElementById("playButton");
+                        const pauseButton = document.getElementById("pauseButton");
+                        playButton.addEventListener("click", () => { audio.play(); playButton.disabled = true; pauseButton.disabled = false; });
+                        pauseButton.addEventListener("click", () => { audio.pause(); playButton.disabled = false; pauseButton.disabled = true; });
+                        audio.addEventListener('ended', () => {playButton.disabled = false; pauseButton.disabled = true;});
+                      </script>
+    
+                <footer>
+                    <p>&copy; 2025 Just, Donna. All rights reserved.</p>
+                </footer>
+            
+                <script src="script.js"></script>
+            </body>
+            </html>

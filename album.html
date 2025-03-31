@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Adventure Album</title>
+    <link rel="stylesheet" href="album.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: transparent; /* Set background to transparent */
+            color: #dd1cadcc;
+            text-align: center;
+        }
+
+        .container {
+            display: flex; /* Use flexbox to layout sidebar and main content */
+            max-width: 1200px; /* Set a maximum width for the container */
+            margin: auto; /* Center the container */
+        }
+
+        .sidebar {
+            width: 200px; /* Fixed width for the sidebar */
+            padding: 20px; /* Padding for the sidebar */
+            background-color: rgba(248, 248, 248, 0.8); /* Semi-transparent background for the sidebar */
+            border-right: 1px solid #ddd; /* Optional: border for separation */
+        }
+
+        .sidebar ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        .sidebar ul li {
+            margin: 10px 0; /* Space between items */
+        }
+
+        .sidebar ul li a {
+            text-decoration: none; /* Remove underline from links */
+            color: #dd1cadcc; /* Link color */
+        }
+
+        .main-content {
+            flex-grow: 1; /* Allow main content to take remaining space */
+            padding: 20px; /* Padding for the main content */
+        }
+
+        .title {
+            font-size: 2.5em; /* Large font size for the title */
+            margin: 20px 0; /* Margin for spacing */
+            color: #dd1cadcc; /* Title color */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+            gap: 10px; /* Space between grid items */
+            padding: 20px; /* Padding around the grid */
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden; /* Hide overflow */
+            border-radius: 10px; /* Optional: Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+            display: inline-block; /* Allow the item to size based on its content */
+            background-color: transparent; /* Ensure background is transparent */
+        }
+
+        .grid-item img {
+            display: block; /* Remove bottom space under images */
+            max-width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Cover the area while maintaining aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="main.html">Homepage</a></li>
+                <li><a href="corner.html">My Little Corner</a></li>
+                <li><a href="bites.html">Bites of Bliss</a></li>
+                <li><a href="album.html" class="active">My Adventure Album</a></li>
+                <li><a href="boudoir.html">My Bookish Boudoir</a></li>
+                <li><a href="popcorn.html">Popcorn & Perspective</a></li>
+                <li><a href="business.html">I mean business</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <h1 class="title">My Adventure Album</h1> <!-- Centered Title -->
+            <section class="grid">
+                <div class="grid-item">
+                    <img src="laag/1.jpg" alt="Image 1">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/2.jpg" alt="Image 2">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/3.jpg" alt="Image 3">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/4.jpg" alt="Image 4">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/5.jpg" alt="Image 5">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/6.jpg" alt="Image 6">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/7.jpg" alt="Image 7">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/8.jpg" alt="Image 8">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/9.jpg" alt="Image 9">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/10.jpg" alt="Image 10">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/11.jpg" alt="Image 11">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/12.jpg" alt="Image 12">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/13.jpg" alt="Image 13">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/14.jpg" alt="Image 14">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/15.jpg" alt="Image 15">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/16.jpg" alt="Image 16">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/17.jpg" alt="Image 17">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/18.jpg" alt="Image 18">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/19.jpg" alt="Image 19">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/20.jpg" alt="Image 20">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/21.jpg" alt="Image 21">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/22.jpg" alt="Image 22">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/23.jpg" alt="Image 23">
+                </div>
+                <div class="grid-item">
+                    <img src="laag/24.jpg" alt="Image 24">
+                </div>
+                <div class="music-container">
+                    <audio id="myAudio" controls style="display: none;">
+                        <source src="audio/travel.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                      </audio>
+                      <button id="playButton">Play</button>
+                      <button id="pauseButton" disabled>Pause</button>
+                      <script>
+                        const audio = document.getElementById("myAudio");
+                        const playButton = document.getElementById("playButton");
+                        const pauseButton = document.getElementById("pauseButton");
+                        playButton.addEventListener("click", () => { audio.play(); playButton.disabled = true; pauseButton.disabled = false; });
+                        pauseButton.addEventListener("click", () => { audio.pause(); playButton.disabled = false; pauseButton.disabled = true; });
+                        audio.addEventListener('ended', () => {playButton.disabled = false; pauseButton.disabled = true;});
+                      </script>
+    
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Just, Donna. All rights reserved.</p>
+    </footer>
+</body>
+</html>

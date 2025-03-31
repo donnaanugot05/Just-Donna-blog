@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just, Donna</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="main.html" class="active">Homepage</a></li>
+                <li><a href="corner.html" class="active">My Little Corner</a></li>
+                <li><a href="bites.html">Bites of Bliss</a></li>
+                <li><a href="album.html">My Adventure Album</a></li>
+                <li><a href="boudoir.html">My Bookish Boudoir</a></li>
+                <li><a href="popcorn.html">Popcorn & Perspective</a></li>
+                <li><a href="business.html">I mean business</a></li>
+            </ul>
+        </nav>
+        
+<main class="main-content main-content">
+
+            <p class="donna-message">Just, Donna</p>
+            <div class="music-container">
+                <audio id="myAudio" controls style="display: none;">
+                    <source src="audio/homepage.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <button id="playButton">Play</button>
+                  <button id="pauseButton" disabled>Pause</button>
+                  <script>
+                    const audio = document.getElementById("myAudio");
+                    const playButton = document.getElementById("playButton");
+                    const pauseButton = document.getElementById("pauseButton");
+                    playButton.addEventListener("click", () => { audio.play(); playButton.disabled = true; pauseButton.disabled = false; });
+                    pauseButton.addEventListener("click", () => { audio.pause(); playButton.disabled = false; pauseButton.disabled = true; });
+                    audio.addEventListener('ended', () => {playButton.disabled = false; pauseButton.disabled = true;});
+                  </script>
+
+            </div>
+
+            <section class="slideshow"> 
+                <div class="slideshow-container">
+                    <div class="slide">
+                        <img src="Images/amhiraya.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-2.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-3.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-4.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-5.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-6.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-7.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-8.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-9.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="Images/amhiraya-10.jpg">
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Just, Donna. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
